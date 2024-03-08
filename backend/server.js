@@ -1,27 +1,23 @@
 import dotenv from "dotenv";
 import express from "express";
-import products from "./data/products.js";
+import connectDB from "./config/db.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+import productRoutes from "./routes/productRoutes.js";
 dotenv.config();
 
 const PORT = process.env.PORT;
 
+connectDB();
+
 const app = express();
 
 app.get("/", (_, res) => {
-  res.send("Api testing server is running");
+  res.send("Api testing server is running ...");
 });
 
-app.get("/api/products", (_, res) => {
-  res.json(products);
-});
+app.use("/api/products", productRoutes);
 
-app.get("/api/products/:id", (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  if (product) {
-    res.json(product);
-  } else {
-    res.status(404).send("Product not found");
-  }
-});
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
