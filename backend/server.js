@@ -1,8 +1,9 @@
+import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import express from "express";
-import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import orderRoutes from "./routes/orderRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(cookieParser());
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoutes);
 
 app.get("/", (_, res) => {
   res.send("Api testing server is running ...");

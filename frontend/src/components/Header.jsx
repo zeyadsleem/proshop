@@ -5,7 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { logout } from "../slices/authSlice.js";
-import { useLogoutMutation } from "../slices/userApiSlice.js";
+import { useLogoutMutation } from "../slices/usersApiSlice.js";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);

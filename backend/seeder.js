@@ -1,6 +1,5 @@
 import "colors";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
 import connectDB from "./config/db.js";
 import products from "./data/products.js";
 import users from "./data/users.js";
