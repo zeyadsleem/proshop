@@ -21,16 +21,17 @@ app.use(express.urlencoded({ extended: true }));
 // Cookie parser middleware
 app.use(cookieParser());
 
-app.use("/api/products", productRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/orders", orderRoutes);
-
 app.get("/", (_, res) => {
   res.send("Api testing server is running ...");
 });
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoutes);
+
+app.get("/api/config/paypal", (_, res) =>
+  res.send({ clientId: process.env.PAYPAL_CLIENT_ID }),
+);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@paypal/react-paypal-js':
+    specifier: ^8.1.4
+    version: 8.1.4(react-dom@18.2.0)(react@18.2.0)
   '@reduxjs/toolkit':
     specifier: ^2.2.1
     version: 2.2.1(react-redux@9.1.0)(react@18.2.0)
@@ -617,6 +620,30 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
     dev: true
+
+  /@paypal/paypal-js@8.0.2:
+    resolution: {integrity: sha512-JbWXxMsTDUE4j+JXAu04qBacjkP6/38lgGC5YKW/FBfU1v3S5EgjfF1cMCGFehcpmsU5T88rkpKDsuftrCkyCA==}
+    dependencies:
+      promise-polyfill: 8.3.0
+    dev: false
+
+  /@paypal/react-paypal-js@8.1.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3wvJCxDXNEydjZMpZ/Zex07+4Rmi5IAdVrdOeOgdQpKdjtnF7OdtJGrfo8d+19ypsnoNLex6rq/dO/iDCQFa4A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@paypal/paypal-js': 8.0.2
+      '@paypal/sdk-constants': 1.0.144
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@paypal/sdk-constants@1.0.144:
+    resolution: {integrity: sha512-2t4h0R+gw6VTGDtV+yD9LizgnJ4Lnytijztyci+cYXGWLG0RqMRpDWanZQVX62u4EjLkzDBfDeFvM63cOu/p5w==}
+    dependencies:
+      hi-base32: 0.5.1
+    dev: false
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
@@ -1733,6 +1760,10 @@ packages:
       function-bind: 1.1.2
     dev: true
 
+  /hi-base32@0.5.1:
+    resolution: {integrity: sha512-EmBBpvdYh/4XxsnUybsPag6VikPYnN30td+vQk+GI3qpahVEG9+gTkG0aXVxTjBqQ5T6ijbWIu77O+C5WFWsnA==}
+    dev: false
+
   /ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
@@ -2203,6 +2234,10 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
     dev: true
+
+  /promise-polyfill@8.3.0:
+    resolution: {integrity: sha512-H5oELycFml5yto/atYqmjyigJoAo3+OXwolYiH7OfQuYlAqhxNvTfiNMbV9hsC6Yp83yE5r2KTVmtrG6R9i6Pg==}
+    dev: false
 
   /prop-types-extra@1.1.1(react@18.2.0):
     resolution: {integrity: sha512-59+AHNnHYCdiC+vMwY52WmvP5dM3QLeoumYuEyceQDi9aEhtwN9zIQ2ZNo25sMyXnbh32h+P1ezDsUpUH3JAew==}
