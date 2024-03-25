@@ -1,4 +1,4 @@
-import { Router } from "express";
+import express from "express";
 import {
   authUser,
   registerUser,
@@ -12,7 +12,7 @@ import {
 } from "../controllers/userController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
 
-const router = Router();
+const router = express.Router();
 
 router.route("/").post(registerUser).get(protect, admin, getUsers);
 router.post("/auth", authUser);
