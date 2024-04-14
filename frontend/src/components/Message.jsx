@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
-import { Alert } from "react-bootstrap";
+import { Alert } from 'react-bootstrap';
 
 const Message = ({ variant, children }) => {
   return <Alert variant={variant}>{children}</Alert>;
 };
 
 Message.defaultProps = {
-  variant: "info",
+  variant: 'info',
 };
 
 export default Message;
